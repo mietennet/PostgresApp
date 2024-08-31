@@ -38,3 +38,21 @@ Please install the correct version of Python, depending on the PostgreSQL versio
 | PostgreSQL 12 and earlier | Python 2.7 (included with macOS)                                  |
 
 Make sure to install the correct version of Python, then use the SQL command `CREATE EXTENSION plpython3u;` to enable the extension.
+
+### Use a Homebrew installation of Python
+
+You can also install Python via Homebrew and then have to link Homebrews Python.framework-folder to /Library/Frameworks.
+
+Just make sure the correct Python version mention in the table above is installed like:
+
+```
+brew install python@3.12
+```
+
+Now you can do:
+
+```
+sudo ln -s /usr/local/Frameworks/Python.framework /Library/Frameworks/.
+```
+
+Any additional Python version you install later is then automatically available for the specific PostgreSQL version.
